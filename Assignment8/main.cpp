@@ -21,8 +21,15 @@ static int prog4(int integer) {
     return result; //Professor likely didn't mean to tell me to just return 1
 }
 
-static int prog5() {
-    return 0;
+static int prog5(int addend1, int addend2) {
+
+    if (addend2 == 0)
+        return addend1;
+
+    else {
+        addend1 += addend2;
+        return prog5(addend1, addend2 - 1);
+    }
 }
 
 static int prog6() {
@@ -34,8 +41,10 @@ int main() {
     //prog2(12);
 
     std::cout << "Skipped\n\nTesting prog4: ";
-    std::cout << prog4(8) << std::endl;
+    //std::cout << prog4(8) << std::endl;
 
-    std::cout << "Complete\n\nTesting prog 5: Skipped";
+    std::cout << "Skipped\n\nTesting prog 5: ";
+    std::cout << prog5(0, 12) << std::endl;
+
     return 0;
 }
