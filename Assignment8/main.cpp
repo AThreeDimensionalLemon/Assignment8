@@ -32,8 +32,13 @@ static int prog5(int addend1, int addend2) {
     }
 }
 
-static int prog6() {
-    return 0;
+static int prog6(int addend) {
+    int result = 0;
+
+    for (addend; addend > 0; addend--)
+        result += addend;
+
+    return result;
 }
 
 int main() {
@@ -43,8 +48,11 @@ int main() {
     std::cout << "Skipped\n\nTesting prog4: ";
     //std::cout << prog4(8) << std::endl;
 
-    std::cout << "Skipped\n\nTesting prog 5: ";
-    std::cout << prog5(0, 12) << std::endl;
+    std::cout << "Skipped\n\nTesting prog5: ";
+    //std::cout << prog5(0, 12) << std::endl;
+
+    std::cout << "Skipped\n\nTesting prog6: ";
+    std::cout << prog6(12) << std::endl;
 
     return 0;
 }
